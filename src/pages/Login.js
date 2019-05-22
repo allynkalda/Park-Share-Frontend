@@ -4,7 +4,7 @@ import { withAuth } from "../lib/AuthProvider";
 class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
 
   handleFormSubmit = event => {

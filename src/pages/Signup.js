@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 class Signup extends Component {
   state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    contact: "",
     username: "",
-    password: ""
+    password: "",
+    image: ""
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
-    this.props.signup({ username, password });
+    const { username, password, firstName, lastName, email, contact, image } = this.state;
+    this.props.signup({ username, password, firstName, lastName, email, contact, image });
   };
 
   handleChange = event => {
@@ -19,10 +24,38 @@ class Signup extends Component {
   };
 
   render() {
-    const { username, password } = this.state;
+    const { username, password, firstName, lastName, email, contact, image } = this.state;
     return (
       <div>
         <form onSubmit={this.handleFormSubmit}>
+          <label>First Name:</label>
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={this.handleChange}
+          />
+          <label>Last Name:</label>
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={this.handleChange}
+          />
+          <label>Email:</label>
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+          />
+          <label>Contact Number:</label>
+          <input
+            type="text"
+            name="contact"
+            value={contact}
+            onChange={this.handleChange}
+          />
           <label>Username:</label>
           <input
             type="text"
@@ -32,9 +65,16 @@ class Signup extends Component {
           />
           <label>Password:</label>
           <input
-            type="password"
+            type="text"
             name="password"
             value={password}
+            onChange={this.handleChange}
+          />
+          <label>Profile Photo:</label>
+          <input
+            type="file"
+            name="image"
+            value={image}
             onChange={this.handleChange}
           />
           <input type="submit" value="Signup" />
