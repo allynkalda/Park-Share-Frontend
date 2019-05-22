@@ -16,9 +16,8 @@ class RentPark {
   }
 
   getparking(info) {
-    const { data } = info
     return this.rentpark
-      .get('/findparking', { data })
+      .get('/findparking')
       .then(({ data }) => data);
   }
 
