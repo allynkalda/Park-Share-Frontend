@@ -1,20 +1,13 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import FindParking from "./../components/FindParking";
-import RentParking from "./../components/RentParking";
+import Directory from "./../components/Directory";
 
 class Private extends Component {
   render() {
     return (
       <div>
         <h1>Welcome {this.props.user.username}</h1>
-        <Router>
-        <Switch>
-            <Route path='/findparking' component={FindParking}/>
-            <Route path='/rentparking' component={RentParking}/>
-        </Switch>
-        </Router>
+        <Directory />
       </div>
     );
   }
