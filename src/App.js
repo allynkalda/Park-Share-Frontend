@@ -16,6 +16,8 @@ import ParkingDetails from "./components/ParkingDetails";
 import RentParking from "./components/RentParking";
 import Directory from "./components/Directory";
 import RentSuccess from "./components/RentSuccess";
+import MessageForm from "./components/MessageForm";
+import MyMessages from "./components/MyMessages";
 
 class App extends Component {
   render() {
@@ -33,6 +35,8 @@ class App extends Component {
             <Route path='/findparking/:id' component={ParkingDetails}/>
             <Route exact path='/rentparking' component={RentParking}/>
             <Route path='/rentparking/success' component={RentSuccess}/>
+            <Route exact path='/message/:id' component={MessageForm}/>
+            <Route path='/mymessages' component={MyMessages}/>
           </Switch>
         </div>
       </AuthProvider>

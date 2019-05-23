@@ -33,7 +33,6 @@ class RentParking extends Component {
   };
 
   render() {
-    console.log(this.props)
     const { location, district, spaceFor, date, description } = this.state;
     return (
       <div>

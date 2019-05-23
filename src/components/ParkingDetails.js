@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
-import rentpark from "./../lib/rentparking-service";
+//import rentpark from "./../lib/rentparking-service";
 import axios from 'axios'
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class ParkingDetails extends Component {
@@ -24,7 +24,7 @@ class ParkingDetails extends Component {
           .catch((err) => console.log(err));
       }
     render() {
-        const { renterName, district, location, spaceFor, date, description } = this.state.data;
+        const { renterName, district, location, spaceFor, date, description, renter } = this.state.data;
         return (
             <div>
                 <h1>Parking Details</h1>
@@ -34,6 +34,9 @@ class ParkingDetails extends Component {
                 <p>Space for: {spaceFor}</p>
                 <p>Description: {description}</p>
                 <p>Date Available: {date}</p>
+                <Link to={`/message/${renter}`}>
+                    Message {renterName}
+                </Link>
             </div>
         )
     }

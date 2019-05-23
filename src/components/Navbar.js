@@ -8,7 +8,9 @@ class Navbar extends Component {
       <div>
         {isLoggedin ? (
           <>
-            <p>username: {user.username}</p>
+            <p>Hello {user.username}!</p>
+            <Link to="/private"><button>Home</button></Link>
+            <Link to="/mymessages"><button>My Messages</button></Link>
             <button onClick={logout}>Logout</button>
           </>
         ) : (

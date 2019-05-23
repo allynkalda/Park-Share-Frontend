@@ -16,20 +16,24 @@ class RentPark {
       .then(({ data }) => data);
   }
 
-  getparking(info) {
+  getparking() {
     return this.rentpark
       .get('/findparking')
       .then(({ data }) => data);
   }
 
-  // getparkingDetails(props) {
-  //   const { id } = this.props.match.params;
-  //   console.log(props)
-  //   return this.rentpark
-  //     .get(`findparking/${id}`)
-  //     .then(({ data }) => data);
-  // }
+  postmessageform(info) {
+    const { message, id } = info;
+    return this.rentpark
+      .post(`/message/${id}`, { message })
+      .then(({ data }) => data);
+  }
   
+  getmessages() {
+    return this.rentpark
+      .get('/mymessages')
+      .then(({ data }) => data);
+  }
 
 }
 
