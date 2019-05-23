@@ -1,11 +1,29 @@
 import React, { Component } from 'react'
 import rentpark from "./../lib/rentparking-service";
 import { Link } from "react-router-dom";
+import RenderFindPark from './RenderFindPark';
+import Search from './Search'
 
 export default class FindParking extends Component {
     state = {
-        listOfParking: []
+        listOfParking: [],
+        searchValue: '',
+
     }
+
+    handleSearch = searchValue => {
+        this.setState({
+          searchValue: searchValue,
+        })
+      }
+
+    renderFind = (listOfParking, searchValue) => {
+        // const { handleAddToList } = this;
+        const filteredArray = listOfParking.filter( parking => {
+          return parking.location.toLowerCase().includes(searchValue.toLowerCase())
+        })
+        return filteredArray.map((parking, index) => <RenderFindPark key={index} parking={parking} />)
+      }
 
     componentDidMount() {
         //  fetch the data from API before initial render
@@ -18,22 +36,12 @@ export default class FindParking extends Component {
 
 
     render() {
-        const {listOfParking} = this.state;
+       // const {listOfParking} = this.state;
         return (
             <div>
             <h1>Find Parking</h1>
-            {
-                listOfParking.map((parking, i) => {
-                    return(
-                        <div key={parking._id}>
-                        <Link to={`/findparking/${parking._id}`}>
-                        <h4>{parking.location}</h4>
-                        </Link>
-                        <p>{parking.renterName}</p>
-                        </div>
-                    )
-                })
-            }
+            <Search handleSearch={this.handleSearch}/>
+            {this.renderFind(this.state.listOfParking, this.state.searchValue)}
             </div>
         )
     }

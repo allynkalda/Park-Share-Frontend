@@ -10,9 +10,9 @@ class RentPark {
   }
  
   postparkform(info) {
-    const { location, district, spaceFor, date } = info;
+    const { location, district, spaceFor, date, description } = info;
     return this.rentpark
-      .post('/rentparking', { location, district, spaceFor, date })
+      .post('/rentparking', { location, district, spaceFor, date, description })
       .then(({ data }) => data);
   }
 
@@ -22,13 +22,13 @@ class RentPark {
       .then(({ data }) => data);
   }
 
-  getparkingDetails(props) {
-    const { id } = this.props.match.params;
-    console.log(props)
-    return this.rentpark
-      .get(`findparking/${id}`)
-      .then(({ data }) => data);
-  }
+  // getparkingDetails(props) {
+  //   const { id } = this.props.match.params;
+  //   console.log(props)
+  //   return this.rentpark
+  //     .get(`findparking/${id}`)
+  //     .then(({ data }) => data);
+  // }
   
 
 }

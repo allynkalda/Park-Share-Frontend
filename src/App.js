@@ -15,13 +15,14 @@ import FindParking from "./components/FindParking";
 import ParkingDetails from "./components/ParkingDetails";
 import RentParking from "./components/RentParking";
 import Directory from "./components/Directory";
+import RentSuccess from "./components/RentSuccess";
 
 class App extends Component {
   render() {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Park Share Project</h1>
+          <h3>Park Share</h3>
           <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
@@ -30,7 +31,8 @@ class App extends Component {
             <Route path='/directory' component={Directory}/>
             <Route exact path='/findparking' component={FindParking}/>
             <Route path='/findparking/:id' component={ParkingDetails}/>
-            <Route path='/rentparking' component={RentParking}/>
+            <Route exact path='/rentparking' component={RentParking}/>
+            <Route path='/rentparking/success' component={RentSuccess}/>
           </Switch>
         </div>
       </AuthProvider>

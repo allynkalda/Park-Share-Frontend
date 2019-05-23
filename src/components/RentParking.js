@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import rentpark from "./../lib/rentparking-service";
@@ -17,10 +18,11 @@ class RentParking extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const { location, district, spaceFor, date } = this.state;
-        rentpark.postparkform({ location, district, spaceFor, date })
+    const { location, district, spaceFor, date, description } = this.state;
+        rentpark.postparkform({ location, district, spaceFor, date, description })
             .then( () => {
-                this.setState({location: "", district: "", spaceFor: "", date: ""});
+                this.setState({location: "", district: "", spaceFor: "", date: "", description: ""});
+                this.props.history.push('/rentparking/success');
             })
             .catch( (err) => console.log(err) )
   }
@@ -31,7 +33,8 @@ class RentParking extends Component {
   };
 
   render() {
-    const { location, district, spaceFor, date } = this.state;
+    console.log(this.props)
+    const { location, district, spaceFor, date, description } = this.state;
     return (
       <div>
         <form onSubmit={this.handleFormSubmit}>
@@ -54,6 +57,13 @@ class RentParking extends Component {
             type="text"
             name="spaceFor"
             value={spaceFor}
+            onChange={this.handleChange}
+          />
+          <label>Description:</label>
+          <input
+            type="text"
+            name="description"
+            value={description}
             onChange={this.handleChange}
           />
           <label>Dates available:</label>
