@@ -12,6 +12,7 @@ import AuthProvider from "./lib/AuthProvider";
 
 // Components
 import FindParking from "./components/FindParking";
+import ParkingDetails from "./components/ParkingDetails";
 import RentParking from "./components/RentParking";
 import Directory from "./components/Directory";
 
@@ -27,7 +28,8 @@ class App extends Component {
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
             <Route path='/directory' component={Directory}/>
-            <Route path='/findparking' component={FindParking}/>
+            <Route exact path='/findparking' component={FindParking}/>
+            <Route path='/findparking/:id' component={ParkingDetails}/>
             <Route path='/rentparking' component={RentParking}/>
           </Switch>
         </div>
