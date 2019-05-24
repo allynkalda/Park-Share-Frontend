@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import auth from "../lib/auth-service"
+
 class Signup extends Component {
   state = {
     firstName: "",
@@ -23,8 +25,23 @@ class Signup extends Component {
     this.setState({ [name]: value });
   };
 
+  fileOnchange = (event) => {
+    const file = event.target.files[0];
+    const uploadData = new FormData()
+    uploadData.append('photo', file)
+
+    auth.imageUpload(uploadData)
+    .then((image) => {
+      this.setState({
+        image,
+        disable: false,
+      })
+    })
+    .catch((error) => console.log(error))
+  }
+
   render() {
-    const { username, password, firstName, lastName, email, contact, image } = this.state;
+    const { username, password, firstName, lastName, email, contact } = this.state;
     return (
       <div>
         <form onSubmit={this.handleFormSubmit}>
@@ -73,9 +90,9 @@ class Signup extends Component {
           <label>Profile Photo:</label>
           <input
             type="file"
-            name="image"
-            value={image}
-            onChange={this.handleChange}
+            /* name="image"
+            value={image} */
+            onChange={this.fileOnchange}
           />
           <input type="submit" value="Signup" />
         </form>

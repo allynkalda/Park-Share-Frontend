@@ -30,6 +30,11 @@ class Auth {
     return this.auth.get("/auth/me").then(response => response.data);
   }
 
+  imageUpload(file) {
+    return this.auth.post('auth/signup/image', file)
+    .then(({data}) => data)
+  }
+
   
 }
 
