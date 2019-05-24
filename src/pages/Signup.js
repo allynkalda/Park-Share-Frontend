@@ -90,8 +90,6 @@ class Signup extends Component {
           <label>Profile Photo:</label>
           <input
             type="file"
-            /* name="image"
-            value={image} */
             onChange={this.fileOnchange}
           />
           <input type="submit" value="Signup" />

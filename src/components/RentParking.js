@@ -18,10 +18,10 @@ class RentParking extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const { location, district, spaceFor, date, description } = this.state;
-        rentpark.postparkform({ location, district, spaceFor, date, description })
+    const { location, district, spaceFor, date, description, image } = this.state;
+        rentpark.postparkform({ location, district, spaceFor, date, description, image })
             .then( () => {
-                this.setState({location: "", district: "", spaceFor: "", date: "", description: ""});
+                this.setState({location: "", district: "", spaceFor: "", date: "", description: "", image: ""});
                 this.props.history.push('/rentparking/success');
             })
             .catch( (err) => console.log(err) )
@@ -31,6 +31,21 @@ class RentParking extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
+  fileOnchange = (event) => {
+    const file = event.target.files[0];
+    const uploadData = new FormData()
+    uploadData.append('photo', file)
+
+    rentpark.imageUpload(uploadData)
+    .then((image) => {
+      this.setState({
+        image,
+        disable: false,
+      })
+    })
+    .catch((error) => console.log(error))
+  }
 
   render() {
     const { location, district, spaceFor, date, description } = this.state;
@@ -71,6 +86,11 @@ class RentParking extends Component {
             name="date"
             value={date}
             onChange={this.handleChange}
+          />
+          <label>Photo:</label>
+          <input
+            type="file"
+            onChange={this.fileOnchange}
           />
           <input type="submit" value="RentParking" />
         </form>

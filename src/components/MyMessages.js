@@ -11,7 +11,6 @@ class MyMessages extends Component {
         //  fetch the data from API before initial render
         rentpark.getmessages()
             .then((data) => {
-                console.log(data)
                 this.setState({ listOfMessages: data })
             })
     }
@@ -21,8 +20,8 @@ class MyMessages extends Component {
             <div>
                 <h3>My Messages</h3>
                 {
-            listOfMessages.map( (contacts) => {
-              return <p>{contacts.message}</p>
+            listOfMessages.map( (list) => {
+              return <p>{list.message}</p>
           })
         }
             </div>

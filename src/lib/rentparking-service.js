@@ -10,9 +10,9 @@ class RentPark {
   }
  
   postparkform(info) {
-    const { location, district, spaceFor, date, description } = info;
+    const { location, district, spaceFor, date, description, image } = info;
     return this.rentpark
-      .post('/rentparking', { location, district, spaceFor, date, description })
+      .post('/rentparking', { location, district, spaceFor, date, description, image })
       .then(({ data }) => data);
   }
 
@@ -33,6 +33,11 @@ class RentPark {
     return this.rentpark
       .get('/mymessages')
       .then(({ data }) => data);
+  }
+
+  imageUpload(file) {
+    return this.rentpark.post('/rentparking/image', file)
+    .then(({data}) => data)
   }
 
 }
