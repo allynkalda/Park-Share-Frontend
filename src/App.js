@@ -18,6 +18,8 @@ import Directory from "./components/Directory";
 import RentSuccess from "./components/RentSuccess";
 import MessageForm from "./components/MessageForm";
 import MyMessages from "./components/MyMessages";
+import MessageDetails from "./components/MessageDetails";
+import MapContainer from "./MapContainer";
 
 class App extends Component {
   render() {
@@ -32,11 +34,13 @@ class App extends Component {
             <PrivateRoute path="/private" component={Private} />
             <Route path='/directory' component={Directory}/>
             <Route exact path='/findparking' component={FindParking}/>
-            <Route path='/findparking/:id' component={ParkingDetails}/>
+            <Route exact path='/findparking/:id' component={ParkingDetails}/>
             <Route exact path='/rentparking' component={RentParking}/>
             <Route path='/rentparking/success' component={RentSuccess}/>
             <Route exact path='/message/:id' component={MessageForm}/>
-            <Route path='/mymessages' component={MyMessages}/>
+            <Route exact path='/mymessages' component={MyMessages}/>
+            <Route exact path='/mymessages/:id' component={MessageDetails}/>
+            <Route exact path='/map' component={MapContainer}/>
           </Switch>
         </div>
       </AuthProvider>

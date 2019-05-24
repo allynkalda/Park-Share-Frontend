@@ -9,6 +9,12 @@ class RentPark {
     console.log(this.props)
   }
  
+  postparkmap({ info }) {
+    return this.rentpark
+      .post('/map', { info })
+      .then(({ data }) => data);
+  }
+
   postparkform(info) {
     const { location, district, spaceFor, date, description, image } = info;
     return this.rentpark
