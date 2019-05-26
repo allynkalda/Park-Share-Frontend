@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
-//import rentpark from "./../lib/rentparking-service";
 import axios from 'axios'
 import { Link } from "react-router-dom";
 
@@ -24,11 +23,11 @@ class ParkingDetails extends Component {
           .catch((err) => console.log(err));
       }
     render() {
-        const { renterName, district, location, spaceFor, date, description, renter } = this.state.data;
+        const { renterName, image, district, location, spaceFor, date, description, renter } = this.state.data;
         return (
             <div>
-                <h1>Parking Details</h1>
-                <h3>Renter: {renterName} </h3>
+                <img className="image-details" src={image}></img>
+                <h3>Parking Sharer: {renterName} </h3>
                 <p>Location: {location}</p>
                 <p>District: {district}</p>
                 <p>Space for: {spaceFor}</p>
@@ -37,6 +36,7 @@ class ParkingDetails extends Component {
                 <Link to={`/message/${renter}`}>
                     Message {renterName}
                 </Link>
+                <Link to={'/findparking'}><img className="logo-nav" src="./images/back.png" ></img></Link>
             </div>
         )
     }

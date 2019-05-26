@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import rentpark from "./lib/rentparking-service";
+import { withRouter } from 'react-router';
 
 const mapStyles = {
   map: {
@@ -10,7 +11,7 @@ const mapStyles = {
   }
 };
 
-export class CurrentLocation extends React.Component {
+class CurrentLocation extends React.Component {
     constructor(props) {
         super(props);
 
@@ -105,16 +106,20 @@ export class CurrentLocation extends React.Component {
     }
 
     handleSubmit = (event) => {
+      
       const current = this.state.currentLocation;
       const info = [];
        info.push(current.lat);
        info.push(current.lng);
         console.log(info);
+        console.log(this);
 
         rentpark.postparkmap({info})
           .then( (data)=> console.log(data))
-          .catch( (err) => console.log(err) )
-    }
+          console.log('this.props', this.props)
+            this.props.history.push('/rentparking')
+        
+    } 
 
     render() {
         const style = Object.assign({}, mapStyles.map);
@@ -131,7 +136,7 @@ export class CurrentLocation extends React.Component {
    
 
 }
-export default CurrentLocation;
+export default withRouter(CurrentLocation);
 
 CurrentLocation.defaultProps = {
   zoom: 14,

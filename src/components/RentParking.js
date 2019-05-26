@@ -7,7 +7,7 @@ import rentpark from "./../lib/rentparking-service";
 class RentParking extends Component {
   state = {
     renter: "",
-    location: {},
+    location: "",
     district: "",
     image: "",
     description: "",
@@ -50,7 +50,7 @@ class RentParking extends Component {
   render() {
     const { location, district, spaceFor, date, description } = this.state;
     return (
-      <div>
+      <div className="front-container">
         <form onSubmit={this.handleFormSubmit}>
           <label>Location:</label>
           <input
@@ -82,7 +82,7 @@ class RentParking extends Component {
           />
           <label>Dates available:</label>
           <input
-            type="text"
+            type="date"
             name="date"
             value={date}
             onChange={this.handleChange}
@@ -92,11 +92,8 @@ class RentParking extends Component {
             type="file"
             onChange={this.fileOnchange}
           />
-          <input type="submit" value="RentParking" />
+          <input type="submit" value="Rent Parking" />
         </form>
-        <p>
-          <Link to={"/private"}> Home</Link>
-        </p>
       </div>
     );
   }

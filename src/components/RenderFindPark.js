@@ -5,13 +5,20 @@ class RenderFindPark extends Component {
     
     render() {
         console.log(this.props)
-        const { _id, location, renterName } = this.props.parking;
+        const { _id, location, renterName, image } = this.props.parking;
         return (
-            <div key={_id}>
+            <div className="box-container" key={_id}>
+                <div>
+                <Link to={`/findparking/${_id}`}>
+                    <img className="parking-image" src={image}></img>
+                </Link>
+                </div>
+                <div className="text-box">
                 <Link to={`/findparking/${_id}`}>
                     <h4>{location}</h4>
                 </Link>
-                    <p>{renterName}</p>
+                    <p>Owner: {renterName}</p>
+                </div>
             </div>
         )
     }

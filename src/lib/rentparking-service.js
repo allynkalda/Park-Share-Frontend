@@ -12,7 +12,7 @@ class RentPark {
   postparkmap({ info }) {
     return this.rentpark
       .post('/map', { info })
-      .then(({ data }) => data);
+      .then(({ data }) => data)
   }
 
   postparkform(info) {
