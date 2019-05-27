@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class MessageDetails extends Component {
     state = {
@@ -19,6 +19,7 @@ export default class MessageDetails extends Component {
 
           .catch((err) => console.log(err));
       }
+      
     render() {
         console.log(this.props)
         return (

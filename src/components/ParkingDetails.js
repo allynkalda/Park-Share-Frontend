@@ -19,7 +19,6 @@ class ParkingDetails extends Component {
             this.setState({data: data});
             console.log(this.state.data)
           })
-
           .catch((err) => console.log(err));
       }
     render() {

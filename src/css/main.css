@@ -1,4 +1,6 @@
-
+p {
+    line-height: 5px;
+}
 
 .generic-button {
     margin-top: 10px;
@@ -60,7 +62,7 @@ label {
 .navbar {
     height: 50px;
     width:100%;
-    background-color: rgba(200, 203, 210, 0.331);
+    background-color: rgba(200, 203, 210, 0.529);
     display:flex;
     justify-content: space-around;
     align-items: center;
@@ -90,4 +92,14 @@ label {
 	border: none;
     font-size: 16px;
     color: white;
+}
+.back-button {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
 }

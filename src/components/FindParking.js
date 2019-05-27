@@ -36,7 +36,7 @@ export default class FindParking extends Component {
         const {listOfParking, searchValue} = this.state;
         return (
             <div>
-            <h1>Find Parking</h1>
+            <h3>Parking Spots</h3>
             <Search handleSearch={this.handleSearch}/>
             {this.renderFind(listOfParking, searchValue)}
             </div>

@@ -6,7 +6,6 @@ class RentPark {
       baseURL: "http://localhost:5000",
       withCredentials: true
     });
-    console.log(this.props)
   }
  
   postparkmap({ info }) {

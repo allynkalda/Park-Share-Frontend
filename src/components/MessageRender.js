@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import userservice from "./../lib/user-service";
 
 export default class MessageRender extends Component {
-
-    state={
-        user:{}
+    state = {
+        user: null
     }
 
     componentDidMount(){
-
+        userservice.getuser()
+        .then((data) => {
+            console.log('data set', data)
+            this.setState({ user: data })
+        })
     }
 
     render() {

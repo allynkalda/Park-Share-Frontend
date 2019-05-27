@@ -21,6 +21,7 @@ import RentSuccess from "./components/RentSuccess";
 import MessageForm from "./components/MessageForm";
 import MyMessages from "./components/MyMessages";
 import MessageDetails from "./components/MessageDetails";
+import EditProfile from "./components/EditProfile";
 import Profile from "./components/Profile";
 import MapContainer from "./MapContainer";
 import Intro from "./Intro";
@@ -39,7 +40,8 @@ class App extends Component {
             <AnonRoute path="/logout" component={Logout} />
             <PrivateRoute path="/private" component={Private} />
             <Route path='/directory' component={Directory}/>
-            <Route path='/profile' component={Profile}/>
+            <PrivateRoute path='/profile' component={Profile}/>
+            <PrivateRoute path='/editprofile' component={EditProfile}/>
             <Route exact path='/map' component={MapContainer}/>
             <Route exact path='/findparking' component={FindParking}/>
             <Route exact path='/findparking/:id' component={ParkingDetails}/>
