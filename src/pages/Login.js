@@ -21,7 +21,7 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div class="front-container">
+      <div className="front-container">
       <form onSubmit={this.handleFormSubmit}>
         <label>Username:</label>
         <input

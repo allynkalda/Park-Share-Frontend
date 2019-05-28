@@ -6,8 +6,8 @@ import { withRouter } from 'react-router';
 const mapStyles = {
   map: {
     position: 'absolute',
-    width: '70%',
-    height: '70%'
+    width: '80vw',
+    height: '80vh'
   }
 };
 
@@ -123,6 +123,7 @@ class CurrentLocation extends React.Component {
 
     render() {
         const style = Object.assign({}, mapStyles.map);
+        console.log(this.state.currentLocation)
        return (
          <div>
          <button onClick={this.handleSubmit}>Send Location</button>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import rentpark from "./../lib/rentparking-service";
 import MessageRender from './MessageRender';
-//import { Link } from "react-router-dom";
 
 class MyMessages extends Component {
     state = {

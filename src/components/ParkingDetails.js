@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
-import axios from 'axios'
 import { Link } from "react-router-dom";
-
+import rentpark from "./../lib/rentparking-service";
 
 class ParkingDetails extends Component {
     state = {
-        data: []
+        data: {}
     }
 
     componentDidMount() {
         //  fetch the data from API before initial render
         const { id } = this.props.match.params;
-        console.log(this.props.match.params)
-        axios.get(`http://localhost:5000/findparking/${id}`)
-          .then( (apiResponse) =>{
-            const data = apiResponse.data;
+        rentpark.getparkingdetails(id)
+          .then( (data) =>{
             this.setState({data: data});
-            console.log(this.state.data)
+            console.log(data)
           })
           .catch((err) => console.log(err));
       }
+
     render() {
         const { renterName, image, district, location, spaceFor, date, description, renter } = this.state.data;
         return (

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-//import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import rentpark from '../lib/rentparking-service'
-import axios from 'axios';
 
 class MessageForm extends Component {
     state = {

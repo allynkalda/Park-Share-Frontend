@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import rentpark from "./../lib/rentparking-service";
-import { Link } from "react-router-dom";
 import RenderFindPark from './RenderFindPark';
 import Search from './Search'
 
@@ -14,7 +13,6 @@ export default class FindParking extends Component {
         //  fetch the data from API before initial render
         rentpark.getparking()
             .then((data) => {
-                console.log(data)
                 this.setState({listOfParking: data})
             })
     }

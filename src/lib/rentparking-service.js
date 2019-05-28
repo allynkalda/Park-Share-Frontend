@@ -7,6 +7,18 @@ class RentPark {
       withCredentials: true
     });
   }
+
+  getMapLocation() {
+    return this.rentpark
+      .get("http://localhost:5000/map")
+      .then(({ data }) => data);
+  }
+
+  getparkingdetails(id) {
+    return this.rentpark
+      .get(`/findparking/${id}`)
+      .then(({ data }) => data);
+  }
  
   postparkmap({ info }) {
     return this.rentpark
@@ -37,6 +49,12 @@ class RentPark {
   getmessages() {
     return this.rentpark
       .get('/mymessages')
+      .then(({ data }) => data);
+  }
+
+  getmymessages(id) {
+    return this.rentpark
+      .get(`/mymessages/${id}`)
       .then(({ data }) => data);
   }
 

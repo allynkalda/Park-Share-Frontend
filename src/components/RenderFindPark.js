@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class RenderFindPark extends Component {
     
     render() {
-        console.log(this.props)
         const { _id, location, renterName, image } = this.props.parking;
         return (
             <div className="box-container" key={_id}>
