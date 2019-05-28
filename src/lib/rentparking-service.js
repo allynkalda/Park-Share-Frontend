@@ -3,14 +3,14 @@ import axios from "axios";
 class RentPark {
   constructor(props) {
     this.rentpark = axios.create({
-      baseURL: "http://localhost:5000",
+      baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }
 
   getMapLocation() {
     return this.rentpark
-      .get("http://localhost:5000/map")
+      .get('/map')
       .then(({ data }) => data);
   }
 

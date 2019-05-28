@@ -9,7 +9,7 @@ class MyMessages extends Component {
     }
 
     renderMessage = () => {
-        this.setState({ shshowMessageowForm: !this.state.showForm })
+        this.setState({ showMessage: !this.state.showForm })
       }    
 
     componentDidMount() {

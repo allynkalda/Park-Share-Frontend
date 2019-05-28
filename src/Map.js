@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import rentpark from "./lib/rentparking-service";
 import { withRouter } from 'react-router';
+import { Link } from "react-router-dom";
 
 const mapStyles = {
   map: {
     position: 'absolute',
-    width: '80vw',
-    height: '80vh'
+    width: '100vw',
+    height: '80vh',
+    margin: '0 auto',
   }
 };
 
@@ -121,12 +123,19 @@ class CurrentLocation extends React.Component {
         
     } 
 
+    goToFindParking = () => {
+      this.props.history.push(`/findparking`)
+    }
+
     render() {
         const style = Object.assign({}, mapStyles.map);
         console.log(this.state.currentLocation)
        return (
          <div>
-         <button onClick={this.handleSubmit}>Send Location</button>
+            <div className="buttons-div">
+              <button className="buttons-map" onClick={this.handleSubmit}>Share this parking</button>
+              <button className="buttons-map" onClick={this.goToFindParking}>See parkings spots</button>
+            </div>
            <div style={style} ref="map">
              Loading map...
            </div>
@@ -140,7 +149,7 @@ class CurrentLocation extends React.Component {
 export default withRouter(CurrentLocation);
 
 CurrentLocation.defaultProps = {
-  zoom: 14,
+  zoom: 13,
   initialCenter: {
     lat: 41.3851,
     lng: 2.1734

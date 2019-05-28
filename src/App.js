@@ -44,12 +44,12 @@ class App extends Component {
             <PrivateRoute path='/editprofile' component={EditProfile}/>
             <Route exact path='/map' component={MapContainer}/>
             <Route exact path='/findparking' component={FindParking}/>
-            <Route exact path='/findparking/:id' component={ParkingDetails}/>
+            <Route path='/findparking/:id' component={ParkingDetails}/>
             <Route exact path='/rentparking' component={RentParking}/>
             <Route path='/rentparking/success' component={RentSuccess}/>
             <Route exact path='/message/:id' component={MessageForm}/>
             <Route exact path='/mymessages' component={MyMessages}/>
-            <Route exact path='/mymessages/:id' component={MessageDetails}/>
+            <Route path='/mymessages/:id' component={MessageDetails}/>
           </Switch>
         </div>
       </AuthProvider>

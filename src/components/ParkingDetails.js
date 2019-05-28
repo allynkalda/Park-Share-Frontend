@@ -9,7 +9,7 @@ class ParkingDetails extends Component {
     }
 
     componentDidMount() {
-        //  fetch the data from API before initial render
+        //  fetch the data from API after initial render
         const { id } = this.props.match.params;
         rentpark.getparkingdetails(id)
           .then( (data) =>{
@@ -33,7 +33,7 @@ class ParkingDetails extends Component {
                 <Link to={`/message/${renter}`}>
                     Message {renterName}
                 </Link>
-                <Link to={'/findparking'}><img className="logo-nav" src="./images/back.png" ></img></Link>
+                <Link to={'/findparking'}><img className="logo-nav" alt="back" src="/images/back.png" ></img></Link>
             </div>
         )
     }

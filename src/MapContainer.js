@@ -12,11 +12,10 @@ export class MapContainer extends Component {
     mapData: []
   };
 
-
   componentDidMount () {
     rentparkService.getMapLocation()
       .then((data) => {
-        this.setState({mapData: data})
+        this.setState({ mapData: data })
       })
   }
 
@@ -47,15 +46,13 @@ export class MapContainer extends Component {
 
     const { selectedParking } = this.state;
 
-    console.log(this.state.selectedParking);
-    console.log(this.state.selectedPlace);
-    console.log(this.props.google);
+
     return (
       <CurrentLocation
         centerAroundCurrentLocation
         google={this.props.google}
+        className="map"
       >
-
       {
         mapData.map((parking) => (
           <Marker key={parking._id}
@@ -71,7 +68,7 @@ export class MapContainer extends Component {
           }}             
           />
       ))}
-          
+
       {
         this.state.selectedParking ? (
           <InfoWindow 
@@ -88,12 +85,16 @@ export class MapContainer extends Component {
           <p>Sharer: {selectedParking.renterName}</p>
           </div>
           </InfoWindow>
-        ) : null
+        ) : <InfoWindow 
+          visible={false}
+          >
+          </InfoWindow>
       }
 
-        <Marker icon="./images/pin.png" 
+      <Marker icon="./images/pin.png" 
                 onClick={this.onMarkerClick} 
                 name={'<button>Hey!</button>'} />
+                
         {/* <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}

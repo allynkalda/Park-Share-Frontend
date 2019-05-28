@@ -9,10 +9,10 @@ class Navbar extends Component {
       <div className="navbar">
         {isLoggedin ? (
           <>
-            <Link to="/private"><img className="logo-nav" src="./images/home.png" ></img></Link>
-            <Link to="/findparking"><img className="big-nav" src="./images/car.png" ></img></Link>
-            <Link to="/mymessages"><img className="big-nav" src="./images/message.png" ></img></Link>
-            <Link to="/profile"><img className="big-nav" src="./images/user.png" ></img></Link>
+            <Link to="/private"><img className="logo-nav" src="/images/home.png" ></img></Link>
+            <Link to="/findparking"><img className="big-nav" src="/images/car.png" ></img></Link>
+            <Link to="/mymessages"><img className="big-nav" src="/images/message.png" ></img></Link>
+            <Link to="/profile"><img className="big-nav" src="/images/user.png" ></img></Link>
           </>
         ) : ( null
         )}
