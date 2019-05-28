@@ -13,7 +13,7 @@ class RenderFindPark extends Component {
                 </Link>
                 </div>
                 <div className="text-box">
-                <Link to={`/findparking/${_id}`}>
+                <Link style={{ textDecoration: 'none' }} to={`/findparking/${_id}`}>
                     <h4>{location}</h4>
                 </Link>
                     <p>Owner: {renterName}</p>

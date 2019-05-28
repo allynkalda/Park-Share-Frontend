@@ -44,6 +44,7 @@ class Signup extends Component {
     const { username, password, firstName, lastName, email, contact } = this.state;
     return (
       <div class="front-container">
+      <div className="signup-form">
         <form onSubmit={this.handleFormSubmit}>
           <label>First Name:</label>
           <input
@@ -94,10 +95,11 @@ class Signup extends Component {
           />
           <input type="submit" value="Signup" />
         </form>
-        <p>
+        <p className="center">
           Already have account?
           <Link to={"/login"}> Login</Link>
         </p>
+      </div>
       </div>
     );
   }

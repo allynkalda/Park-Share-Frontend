@@ -6,7 +6,7 @@ class Intro extends Component {
         return (
             <div>
                 <div className="front-container">
-                <img className="logo" src="./images/parking-icon.png" ></img>
+                <img className="logo" src="./images/parking.png"></img>
                 <Link to="/login"><button className="generic-button">Login</button></Link>
                 <Link to="/signup"><button className="generic-button">Signup</button></Link> 
                 </div>

@@ -93,7 +93,8 @@ export class MapContainer extends Component {
 
       <Marker icon="./images/pin.png" 
                 onClick={this.onMarkerClick} 
-                name={'<button>Hey!</button>'} />
+                position={{ lat: 41.3978177,
+                            lng: 2.1904797}}  />
                 
         {/* <InfoWindow
           marker={this.state.activeMarker}

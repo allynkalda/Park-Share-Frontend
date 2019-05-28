@@ -11,9 +11,10 @@ class MessageForm extends Component {
         event.preventDefault();
         const { message } = this.state;
         const { id } = this.props.match.params;
+        const senderName = this.props.user.username;
         
-        rentpark.postmessageform({ message, id})
-        .then( ({ message, id }) => {
+        rentpark.postmessageform({ message, id, senderName })
+        .then( ({ message, id, sender }) => {
             this.setState({ message: '' });
         })
     }
@@ -24,6 +25,7 @@ class MessageForm extends Component {
       };
     
     render() {
+
         const { message } = this.state;
         return (
             <div>

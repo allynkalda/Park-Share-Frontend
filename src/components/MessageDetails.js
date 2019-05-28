@@ -15,14 +15,8 @@ export default class MessageDetails extends Component {
           .then((data) =>{
             this.setState({data: data});
           })
-
           .catch((err) => console.log(err));
         
-          userservice.getuser()
-          .then((data) => {
-              console.log('data user', data)
-              this.setState({ users: data })
-          })
       }
       
     render() {
@@ -31,6 +25,7 @@ export default class MessageDetails extends Component {
             <div>
                 <h3>Message Details</h3>
                 <p>{this.state.data.message}</p>
+                <p>Message from {this.state.data.senderName}</p>
             </div>
         )
     }

@@ -38,11 +38,11 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <AnonRoute path="/logout" component={Logout} />
-            <PrivateRoute path="/private" component={Private} />
+            <PrivateRoute path="/private" component={MapContainer} />
             <Route path='/directory' component={Directory}/>
             <PrivateRoute path='/profile' component={Profile}/>
             <PrivateRoute path='/editprofile' component={EditProfile}/>
-            <Route exact path='/map' component={MapContainer}/>
+            {/* <PrivateRoute exact path='/map' component={MapContainer}/> */}
             <Route exact path='/findparking' component={FindParking}/>
             <Route path='/findparking/:id' component={ParkingDetails}/>
             <Route exact path='/rentparking' component={RentParking}/>

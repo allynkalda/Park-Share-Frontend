@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import rentpark from "./lib/rentparking-service";
 import { withRouter } from 'react-router';
-import { Link } from "react-router-dom";
 
 const mapStyles = {
   map: {

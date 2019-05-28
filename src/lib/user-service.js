@@ -10,14 +10,14 @@ class UserService {
 
   getuser() {
     return this.userservice
-      .get('/profile')
+      .get('/api/profile')
       .then(({ data }) => data);
   }
 
   edituser(info) {
     const { firstName, lastName, email, contact } = info;
     return this.userservice
-      .post('/editprofile', { firstName, lastName, email, contact })
+      .post('/api/editprofile', { firstName, lastName, email, contact })
       .then(({ data }) => data)
       .catch(error => console.log(error))
   }
