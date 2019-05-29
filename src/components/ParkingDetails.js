@@ -22,7 +22,7 @@ class ParkingDetails extends Component {
     render() {
         const { renterName, image, district, location, spaceFor, date, description, renter } = this.state.data;
         return (
-            <div>
+            <div className="front-container">
                 <img className="image-details" src={image}></img>
                 <h3>Parking Sharer: {renterName} </h3>
                 <p>Location: {location}</p>
@@ -31,9 +31,15 @@ class ParkingDetails extends Component {
                 <p>Description: {description}</p>
                 <p>Date Available: {date}</p>
                 <Link to={`/message/${renter}`}>
+                <button className="generic-button">
                     Message {renterName}
+                </button>
                 </Link>
-                <Link to={'/findparking'}><img className="logo-nav" alt="back" src="/images/back.png" ></img></Link>
+                <Link to={'/findparking'}>
+                <button className="logout-button">
+                    Back
+                </button>
+                </Link>
             </div>
         )
     }

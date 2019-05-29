@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Map';
 import rentparkService from './lib/rentparking-service'
+import data from './data.json'
 
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
-    activeMarker: {},
+    CurrentLocation: {},
     selectedPlace: {},
     selectedParking: null, 
     mapData: []
@@ -27,10 +28,6 @@ export class MapContainer extends Component {
   //     selectedParking: parking
   //   });
 
-  // makeLink = () => {
-
-  // }
-
   onClose = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -40,18 +37,26 @@ export class MapContainer extends Component {
     }
   };
 
+  getCurrentLocation = (props) => {
+    this.setState({
+      CurrentLocation: props,
+    })
+  }
+
   render() {
     
     const { mapData } = this.state;
 
     const { selectedParking } = this.state;
 
+    console.log(this.state.CurrentLocation)
 
     return (
       <CurrentLocation
         centerAroundCurrentLocation
         google={this.props.google}
         className="map"
+        getCurrentLoc={this.getCurrentLocation}
       >
       {
         mapData.map((parking) => (
@@ -61,7 +66,7 @@ export class MapContainer extends Component {
           onClick={ () => {
             this.setState({
             selectedPlace: this.props,
-            activeMarker: this.marker,
+
             showingInfoWindow: true,
             selectedParking: parking
             });
@@ -78,8 +83,8 @@ export class MapContainer extends Component {
           position={{ lat: selectedParking.currentLoc.coordinates[0],
                       lng: selectedParking.currentLoc.coordinates[1]}}>
           <div>
-          <a href={`findparking/${this.state.selectedParking._id}`}>
-          <img className="image-map" src={this.state.selectedParking.image}></img>
+          <a href={`findparking/${selectedParking._id}`}>
+          <img className="image-map" src={selectedParking.image}></img>
           </a>
           <p>{selectedParking.location}</p>
           <p>Sharer: {selectedParking.renterName}</p>
@@ -92,9 +97,8 @@ export class MapContainer extends Component {
       }
 
       <Marker icon="./images/pin.png" 
-                onClick={this.onMarkerClick} 
-                position={{ lat: 41.3978177,
-                            lng: 2.1904797}}  />
+                onClick={this.onMarkerClick}
+                  />
                 
         {/* <InfoWindow
           marker={this.state.activeMarker}

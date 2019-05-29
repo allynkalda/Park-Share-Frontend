@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
-import rentpark from '../lib/rentparking-service'
+import rentpark from '../lib/rentparking-service';
+import { Link } from "react-router-dom";
 
 class MessageForm extends Component {
     state = {
@@ -28,18 +29,25 @@ class MessageForm extends Component {
 
         const { message } = this.state;
         return (
-            <div>
-                <h3>Message!</h3>
+            <div className="front-container">
+                <div className="message-box"></div>
                 <form onSubmit={this.handleFormSubmit}>
                 <label>Message:</label>
-                    <input
+                    <div>
+                    <textarea rows = "10" cols = "36"
                     type="text"
                     name="message"
                     value={message}
                     onChange={this.handleChange}
                     />
+                    </div>
                 <input type="submit" value="Send" />
                 </form>
+                <Link to={'/findparking'}>
+                <button className="logout-button">
+                    Back
+                </button>
+                </Link>
             </div>
         )
     }

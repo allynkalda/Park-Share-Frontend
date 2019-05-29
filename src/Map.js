@@ -57,11 +57,11 @@ class CurrentLocation extends React.Component {
               lat: coords.latitude,
               lng: coords.longitude
             }
-          });
+          },()=>{this.props.getCurrentLoc(this.state.currentLocation); this.loadMap();});
         });
       }
     }
-    this.loadMap();
+    
     }
 
     loadMap() {

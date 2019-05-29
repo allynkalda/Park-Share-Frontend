@@ -21,8 +21,6 @@ class UserService {
       .then(({ data }) => data)
       .catch(error => console.log(error))
   }
-
-
 }
 
 const userservice = new UserService();

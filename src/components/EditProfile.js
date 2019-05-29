@@ -65,7 +65,11 @@ export default class EditProfile extends Component {
                   />
                   <input type="submit" value="Save Changes" />
                 </form>
-                <Link to={'/profile'}><img className="back-button" src="./images/back.png" ></img></Link>
+                <Link to={'/findparking'}>
+                <button className="logout-button">
+                    Back
+                </button>
+                </Link>
             </div>
         )
     }

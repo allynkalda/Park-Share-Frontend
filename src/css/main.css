@@ -51,7 +51,7 @@ h3 {
     font-size: 25px;
     color: #CD3943;
     text-align: center;
-    margin-top: 10px;
+    margin: 18px;
 }
 p {
     line-height: 30px;
@@ -89,7 +89,7 @@ p {
     flex-direction: row;
     align-items: center;
     justify-self: center;
-    border: 1px solid grey;
+    border: 2px solid rgba(128, 128, 128, 0.488);
     border-radius: 20px;
     margin: 10px 5px 10px 5px;
 }
@@ -104,6 +104,8 @@ p {
 }
 .image-details {
     width: 300px;
+    margin: 30px 30px 0px 30px;
+    border-radius: 10px;
 }
 input {
     font-size:16px;
@@ -139,6 +141,18 @@ label {
     -moz-transition:0.2s ease all; 
     -webkit-transition:0.2s ease all;
 }
+textarea {
+    margin: 20px 0px 10px 0px;
+    border: 2px solid rgba(128, 128, 128, 0.488);
+    border-radius: 10px;
+    font-size: 15px;
+}
+textarea:focus { 
+    outline:none; 
+}
+.message-box {
+    margin-top: 100px;
+}
 .navbar {
     height: 10vh;
     width:100%;
@@ -173,12 +187,8 @@ label {
     font-size: 16px;
     color: white;
 }
-.back-button {
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-}
 .profile-photo {
+    margin: 20px 0px 20px 0px;
     width: 150px;
     height: 150px;
     border-radius: 80px;

@@ -9,8 +9,8 @@ class Search extends Component {
 
   render() { 
     return (
-      <div className="search-input">
-        <input className="input" type="text" placeholder="Filter" onChange={this.handleSearch}/>
+      <div className="front-container">
+        <input className="input" type="text" placeholder="Filter by location" onChange={this.handleSearch}/>
       </div>
     )
   }
