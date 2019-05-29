@@ -76,6 +76,14 @@ export class MapContainer extends Component {
         className="map"
         getCurrentLoc={this.getCurrentLocation}
       >
+      { this.state.CurrentLocation ? (
+        <Marker icon="./images/pin.png"
+                position={{ lat: this.state.CurrentLocation.lat + .001,
+                            lng: this.state.CurrentLocation.lng + .001}} 
+              />
+       ) : null
+      }
+
       {
         mapData.map((parking) => (
           <Marker key={parking._id}
@@ -113,13 +121,6 @@ export class MapContainer extends Component {
           visible={false}
           >
           </InfoWindow>
-      }
-      { this.state.CurrentLocation ? (
-        <Marker icon="./images/pin.png"
-                position={{ lat: this.state.CurrentLocation.lat,
-                            lng: this.state.CurrentLocation.lng}} 
-              />
-       ) : null
       }
 
 

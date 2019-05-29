@@ -11,7 +11,8 @@ class RentParking extends Component {
     description: "",
     spaceFor: "",
     usersInterested: "",
-    date: ""
+    date: "",
+    disable: true
   };
 
   handleFormSubmit = (event) => {
@@ -46,7 +47,7 @@ class RentParking extends Component {
   }
 
   render() {
-    const { location, district, spaceFor, date, description } = this.state;
+    const { location, district, spaceFor, date, description, disable } = this.state;
     return (
       <div className="front-container">
         <div className="small-margintop">
@@ -91,7 +92,9 @@ class RentParking extends Component {
             type="file"
             onChange={this.fileOnchange}
           />
-          <input type="submit" value="Rent Parking" />
+          <div className="front-container">
+          <button className="generic-button" type="submit" value="Rent Parking" disabled={disable}>Rent Parking</button>
+          </div>
         </form>
         </div>
       </div>

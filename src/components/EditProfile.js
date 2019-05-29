@@ -17,7 +17,7 @@ export default class EditProfile extends Component {
                 .then( () => {
                     this.setState({firstName: "",
                     lastName: "",
-                    email: ", ",
+                    email: "",
                     contact: null});
                     this.props.history.push('/profile');
                 })

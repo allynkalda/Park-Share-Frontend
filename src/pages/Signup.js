@@ -11,7 +11,8 @@ class Signup extends Component {
     contact: "",
     username: "",
     password: "",
-    image: ""
+    image: "",
+    disable: true
   };
 
   handleFormSubmit = event => {
@@ -41,7 +42,7 @@ class Signup extends Component {
   }
 
   render() {
-    const { username, password, firstName, lastName, email, contact } = this.state;
+    const { username, password, firstName, lastName, email, contact, disable } = this.state;
     return (
       <div class="front-container">
       <div className="signup-form">
@@ -93,7 +94,9 @@ class Signup extends Component {
             type="file"
             onChange={this.fileOnchange}
           />
-          <input type="submit" value="Signup" />
+          <div className="front-container">
+          <button className="generic-button" type="submit" value="Sign up" disabled={disable}>Sign up</button>
+          </div>
         </form>
          <p className="center">
           Already have an account?
