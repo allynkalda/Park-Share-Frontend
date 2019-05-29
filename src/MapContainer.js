@@ -95,10 +95,16 @@ export class MapContainer extends Component {
           >
           </InfoWindow>
       }
+      { this.state.CurrentLocation ? (
+        <Marker icon="./images/pin.png"
+                position={{ lat: this.state.CurrentLocation.lat,
+                            lng: this.state.CurrentLocation.lng}} 
+              />
+       ) : null
+      }
 
-      <Marker icon="./images/pin.png" 
-                onClick={this.onMarkerClick}
-                  />
+
+
                 
         {/* <InfoWindow
           marker={this.state.activeMarker}
