@@ -6,6 +6,7 @@ import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
+import Intro from "./pages/Intro";
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
@@ -24,7 +25,6 @@ import MessageDetails from "./components/MessageDetails";
 import EditProfile from "./components/EditProfile";
 import Profile from "./components/Profile";
 import MapContainer from "./MapContainer";
-import Intro from "./Intro";
 
 class App extends Component {
   render() {

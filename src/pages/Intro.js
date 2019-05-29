@@ -7,6 +7,7 @@ class Intro extends Component {
             <div>
                 <div className="front-container">
                 <img className="logo" src="./images/parking.png"></img>
+                <h1 className="app-name">Park Share</h1>
                 <Link to="/login"><button className="generic-button">Login</button></Link>
                 <Link to="/signup"><button className="generic-button">Signup</button></Link> 
                 </div>

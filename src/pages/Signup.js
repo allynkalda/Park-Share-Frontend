@@ -95,9 +95,15 @@ class Signup extends Component {
           />
           <input type="submit" value="Signup" />
         </form>
-        <p className="center">
-          Already have account?
-          <Link to={"/login"}> Login</Link>
+         <p className="center">
+          Already have an account?
+          <div>
+          <Link to={'/login'}>
+            <button className="logout-button">
+              Login
+            </button>
+          </Link>
+          </div>
         </p>
       </div>
       </div>

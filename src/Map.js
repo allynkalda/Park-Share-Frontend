@@ -132,7 +132,7 @@ class CurrentLocation extends React.Component {
        return (
          <div>
             <div className="buttons-div">
-              <button className="buttons-map" onClick={this.handleSubmit}>Share this parking</button>
+              <button className="shareparking-button" onClick={this.handleSubmit}>Share this parking</button>
               <button className="buttons-map" onClick={this.goToFindParking}>See parkings spots</button>
             </div>
            <div style={style} ref="map">

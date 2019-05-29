@@ -3,6 +3,7 @@ import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Map';
 import rentparkService from './lib/rentparking-service'
 import data from './data.json'
+import { Redirect } from "react-router-dom";
 
 export class MapContainer extends Component {
   state = {
@@ -10,7 +11,8 @@ export class MapContainer extends Component {
     CurrentLocation: {},
     selectedPlace: {},
     selectedParking: null, 
-    mapData: []
+    mapData: [],
+    isRedirect: false,
   };
 
   componentDidMount () {
@@ -37,19 +39,35 @@ export class MapContainer extends Component {
     }
   };
 
+  handleClick = (event) => {
+    console.log('hey')
+    event.preventDefault();
+    this.setState({
+      isRedirect: true,
+    })
+  }
+
+  componentDidUpdate() {
+    console.log('update')
+    document.querySelectorAll("a[href^='#']").forEach(node => {
+      node.addEventListener('click', event => {
+        event.preventDefault();
+        this.handleClick(event)
+      });
+    })
+  }
+
   getCurrentLocation = (props) => {
     this.setState({
       CurrentLocation: props,
     })
   }
 
+
   render() {
-    
-    const { mapData } = this.state;
 
-    const { selectedParking } = this.state;
+    const { selectedParking, mapData , isRedirect } = this.state;
 
-    console.log(this.state.CurrentLocation)
 
     return (
       <CurrentLocation
@@ -81,10 +99,11 @@ export class MapContainer extends Component {
           visible={this.state.showingInfoWindow}
           onClose={this.onClose}
           position={{ lat: selectedParking.currentLoc.coordinates[0],
-                      lng: selectedParking.currentLoc.coordinates[1]}}>
+                      lng: selectedParking.currentLoc.coordinates[1]}}
+                      onClick={() => console.log('clicked')}>
           <div>
-          <a href={`findparking/${selectedParking._id}`}>
-          <img className="image-map" src={selectedParking.image}></img>
+          <a href="#">
+          <img className="image-map" src={selectedParking.image} alt="#" onClick={() => console.log('clicked')}></img>
           </a>
           <p>{selectedParking.location}</p>
           <p>Sharer: {selectedParking.renterName}</p>
@@ -116,6 +135,7 @@ export class MapContainer extends Component {
             
           </div>
         </InfoWindow> */}
+        {isRedirect ? <Redirect to={`findparking/${selectedParking._id}`}/> : null }
       </CurrentLocation>
     );
   }

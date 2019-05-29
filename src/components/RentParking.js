@@ -49,6 +49,7 @@ class RentParking extends Component {
     const { location, district, spaceFor, date, description } = this.state;
     return (
       <div className="front-container">
+        <div className="small-margintop">
         <form onSubmit={this.handleFormSubmit}>
           <label>Location:</label>
           <input
@@ -92,6 +93,7 @@ class RentParking extends Component {
           />
           <input type="submit" value="Rent Parking" />
         </form>
+        </div>
       </div>
     );
   }
