@@ -112,17 +112,15 @@ class CurrentLocation extends React.Component {
       const info = [];
        info.push(current.lat);
        info.push(current.lng);
-        console.log(info);
-        console.log(this);
 
         rentpark.postparkmap({info})
           .then( (data)=> console.log(data))
           console.log('this.props', this.props)
-            this.props.history.push('/rentparking')
-        
+            this.props.history.push('/rentparking')      
     } 
 
-    goToFindParking = () => {
+    goToFindParking = (e) => {
+      e.preventDefault();
       this.props.history.push(`/findparking`)
     }
 

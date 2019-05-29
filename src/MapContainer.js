@@ -48,13 +48,16 @@ export class MapContainer extends Component {
   }
 
   componentDidUpdate() {
-    console.log('update')
-    document.querySelectorAll("a[href^='#']").forEach(node => {
-      node.addEventListener('click', event => {
-        event.preventDefault();
-        this.handleClick(event)
-      });
-    })
+    setTimeout(() => {
+      document.querySelectorAll("a[href^='#']").forEach(node => {
+        console.log(node)
+        node.addEventListener('click', event => {
+          event.preventDefault();
+          this.handleClick(event)
+        });
+      })
+    }, 2000);
+   
   }
 
   getCurrentLocation = (props) => {
@@ -68,7 +71,9 @@ export class MapContainer extends Component {
 
     const { selectedParking, mapData , isRedirect } = this.state;
 
-
+    if(selectedParking) {
+      console.log('selected card')
+    }
     return (
       <CurrentLocation
         centerAroundCurrentLocation
