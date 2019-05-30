@@ -6,7 +6,7 @@ export default class EditProfile extends Component {
     state = {
         firstName: "",
         lastName: "",
-        email: ", ",
+        email: "",
         contact: null
     }
 
