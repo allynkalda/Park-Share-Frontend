@@ -48,7 +48,7 @@ class App extends Component {
             <Route path='/findparking/:id' component={ParkingDetails}/>
             <Route exact path='/rentparking' component={RentParking}/>
             <Route path='/rentparking/success' component={RentSuccess}/>
-            <Route exact path='/myparking' component={MyParking}/>
+            <PrivateRoute exact path='/myparking' component={MyParking}/>
             <Route exact path='/myparkingedit' component={MyParkingEdit}/>
             <Route exact path='/message/:id' component={MessageForm}/>
             <Route exact path='/mymessages' component={MyMessages}/>

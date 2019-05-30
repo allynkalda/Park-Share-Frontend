@@ -48,7 +48,7 @@ class RentPark {
 
   deleteparking() {
     return this.rentpark
-      .delete('/api/myparkingdelete')
+      .delete('/api/myparking')
       .then(({ data }) => data);
   }
 

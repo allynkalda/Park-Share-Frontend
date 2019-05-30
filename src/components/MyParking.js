@@ -20,15 +20,20 @@ class MyParking extends Component {
     deleteOne = () => {
         rentpark.deleteparking()
             .then(() => {
-                console.log('deleted');
+                this.props.history.push('/profile')
             })
     }
 
-    render() {
+    transformDate = (date) => {
+        const dateISO = new Date(date);
+        const dateTransformed = dateISO.getDate() + '-' + (dateISO.getMonth()+1) + '-' + dateISO.getFullYear();
+        return (dateTransformed)
+   }
 
+    render() {
         return (
             <div>
-            { this.state.data ? (
+            { this.state.data && this.state.data.length > 0 ? (
                 <div className="front-container">
                 <h3>My Parking Spot</h3>
                 <img className="image-details" alt="car" src={this.state.data[0].image}></img>
@@ -36,12 +41,15 @@ class MyParking extends Component {
                 <p>District: {this.state.data[0].district}</p>
                 <p>Space for: {this.state.data[0].spaceFor}</p>
                 <p>Description: {this.state.data[0].description}</p>
+                <p>Date available: {this.transformDate(this.state.data[0].date)}</p>
                 <Link to="/myparkingedit">
                 <button className="generic-button">Edit</button>
                 </Link>
-                <button className="logout-button" onclick={this.deleteOne}>Delete</button>
+                <button className="logout-button" onClick={this.deleteOne}>Delete</button>
                 </div>
-            ) : null
+            ) : <div className="front-container">
+                <h3>You have currently no parking spots to share.</h3>
+                </div>
             }
             </div>
         )
