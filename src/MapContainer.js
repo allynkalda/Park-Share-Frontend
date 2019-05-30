@@ -47,7 +47,7 @@ export class MapContainer extends Component {
           this.handleClick(event)
         });
       })
-    }, 2000);
+    }, 1500);
    
   }
 
@@ -117,20 +117,6 @@ export class MapContainer extends Component {
           >
           </InfoWindow>
       }
-
-
-
-                
-        {/* <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-        <p>Current Location</p>
-          <div dangerouslySetInnerHTML={{__html:this.state.selectedPlace.name}}>
-            
-          </div>
-        </InfoWindow> */}
         {isRedirect ? <Redirect to={`findparking/${selectedParking._id}`}/> : null }
       </CurrentLocation>
     );
