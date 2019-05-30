@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Map';
 import rentparkService from './lib/rentparking-service'
-import data from './data.json'
 import { Redirect } from "react-router-dom";
 
 export class MapContainer extends Component {
@@ -21,14 +20,6 @@ export class MapContainer extends Component {
         this.setState({ mapData: data })
       })
   }
-
-  // onMarkerClick = (props, marker, e) =>
-  //   this.setState({
-  //     selectedPlace: props,
-  //     activeMarker: marker,
-  //     showingInfoWindow: true,
-  //     selectedParking: parking
-  //   });
 
   onClose = props => {
     if (this.state.showingInfoWindow) {
@@ -112,14 +103,13 @@ export class MapContainer extends Component {
           visible={this.state.showingInfoWindow}
           onClose={this.onClose}
           position={{ lat: selectedParking.currentLoc.coordinates[0],
-                      lng: selectedParking.currentLoc.coordinates[1]}}
-                      onClick={() => console.log('clicked')}>
+                      lng: selectedParking.currentLoc.coordinates[1]}}>
           <div>
           <a href="#">
           <img className="image-map" src={selectedParking.image} alt="#" onClick={() => console.log('clicked')}></img>
           </a>
-          <p>{selectedParking.location}</p>
-          <p>Sharer: {selectedParking.renterName}</p>
+          <p className="map-text">{selectedParking.location}</p>
+          <p className="map-text">Sharer: {selectedParking.renterName}</p>
           </div>
           </InfoWindow>
         ) : <InfoWindow 

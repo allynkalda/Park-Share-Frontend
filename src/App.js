@@ -24,6 +24,8 @@ import MyMessages from "./components/MyMessages";
 import MessageDetails from "./components/MessageDetails";
 import EditProfile from "./components/EditProfile";
 import Profile from "./components/Profile";
+import MyParking from "./components/MyParking";
+import MyParkingEdit from "./components/MyParkingEdit";
 import MapContainer from "./MapContainer";
 
 class App extends Component {
@@ -42,11 +44,12 @@ class App extends Component {
             <Route path='/directory' component={Directory}/>
             <PrivateRoute path='/profile' component={Profile}/>
             <PrivateRoute path='/editprofile' component={EditProfile}/>
-            {/* <PrivateRoute exact path='/map' component={MapContainer}/> */}
             <Route exact path='/findparking' component={FindParking}/>
             <Route path='/findparking/:id' component={ParkingDetails}/>
             <Route exact path='/rentparking' component={RentParking}/>
             <Route path='/rentparking/success' component={RentSuccess}/>
+            <Route exact path='/myparking' component={MyParking}/>
+            <Route exact path='/myparkingedit' component={MyParkingEdit}/>
             <Route exact path='/message/:id' component={MessageForm}/>
             <Route exact path='/mymessages' component={MyMessages}/>
             <Route path='/mymessages/:id' component={MessageDetails}/>

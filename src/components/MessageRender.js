@@ -18,12 +18,10 @@ export default class MessageRender extends Component {
     render() {
         const { _id } = this.props.list;
         return (
-            <div>
-            <div key={_id}>
-                <Link to={`/mymessages/${_id}`}>
-                    <h4>Message</h4>
+            <div className="message-inbox" key={_id}>
+                <Link style={{ textDecoration: 'none' }} to={`/mymessages/${_id}`}>
+                    <h4 className="message-title">New Message</h4>
                 </Link>
-            </div>
             </div>
         )
     }

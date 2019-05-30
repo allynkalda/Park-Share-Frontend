@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import rentpark from "./../lib/rentparking-service";
-import userservice from "./../lib/user-service";
+import { Link } from "react-router-dom";
 
 export default class MessageDetails extends Component {
     state = {
@@ -12,20 +12,27 @@ export default class MessageDetails extends Component {
         //  fetch the data from API before initial render
         const { id } = this.props.match.params;
         rentpark.getmymessages(id)
-          .then((data) =>{
+          .then((data) => {
             this.setState({data: data});
           })
-          .catch((err) => console.log(err));
-        
+          .catch((err) => console.log(err));    
       }
       
     render() {
-        console.log(this.props)
         return (
-            <div>
-                <h3>Message Details</h3>
-                <p>{this.state.data.message}</p>
-                <p>Message from {this.state.data.senderName}</p>
+            <div className="front-container">
+                <h3 className="message-space">Message Details</h3>
+                <div className="read-message">
+                <h4 className="message-space">{this.state.data.message}</h4>
+                <p>Message from {this.state.data.senderName}<p> </p>
+                <img className="message-image" src="/images/in-love.png"></img>
+                </p>
+                </div>
+                <Link to={'/mymessages'}>
+                <button className="logout-button">
+                    Back
+                </button>
+                </Link>
             </div>
         )
     }

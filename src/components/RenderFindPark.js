@@ -8,14 +8,12 @@ class RenderFindPark extends Component {
         return (
             <div className="box-container" key={_id}>
                 <div>
-                <Link to={`/findparking/${_id}`}>
+                <Link style={{ textDecoration: 'none' }} to={`/findparking/${_id}`}>
                     <img className="parking-image" src={image}></img>
                 </Link>
                 </div>
                 <div className="text-box">
-                <Link style={{ textDecoration: 'none' }} to={`/findparking/${_id}`}>
                     <h4>{location}</h4>
-                </Link>
                     <p>Owner: {renterName}</p>
                 </div>
             </div>

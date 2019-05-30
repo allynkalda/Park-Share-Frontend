@@ -26,13 +26,18 @@ class Profile extends Component {
                     <div className="front-container">
                         <h3>Your profile</h3>
                         {
-                        !this.state.data.image ? <img src="./images/profile.png"></img> :
+                        !this.state.data.image ? <img className="profile-photo" src="./images/profile.png"></img> :
                         <img className="profile-photo" src={this.state.data.image}></img>
                         }
                         <p>First Name: {this.state.data.firstName}</p>
                         <p>Last Name: {this.state.data.lastName}</p>
                         <p>Email: {this.state.data.email}</p>
                         <p>Contact Number: {this.state.data.contact}</p>
+                        <Link to={'/myparking'}>
+                            <button className="generic-button">
+                                My Parking
+                            </button>
+                        </Link>
                         <Link to="/editprofile"><button className="logout-button">Edit Profile</button></Link>
                         <button className="logout-button" onClick={logout}>Logout</button>
                     </div>

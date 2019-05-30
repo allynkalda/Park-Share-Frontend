@@ -16,22 +16,17 @@ class MyMessages extends Component {
         //  fetch the data from API before initial render
         rentpark.getmessages()
             .then((data) => {
-                console.log(data)
                 this.setState({ listOfMessages: data })
             })
     }
     render() {
         const {listOfMessages} = this.state;
         return (
-            <div>
-                <h3>My Messages</h3>
+            <div className="front-container">
+                <h3 className="message-space">My Messages</h3>
                 {
             listOfMessages.map( (list, index) => {
               return <MessageRender key={index} list={list}/>
-                        {/* {
-                this.state.renderMessage ? <MessageRender addTheFood={this.addFood} /> : null
-                        } */}
-              {/* <MessageRender key={index} list={list}>Message</MessageRender> */}
           })
         }
             </div>

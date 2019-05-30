@@ -18,6 +18,15 @@ class ParkingDetails extends Component {
           })
           .catch((err) => console.log(err));
       }
+    
+
+    transformDate = (date) => {
+        const dateISO = new Date(date);
+        const dateTransformed = dateISO.getDate() + '-' + (dateISO.getMonth()+1) + '-' + dateISO.getFullYear();
+        return (dateTransformed)
+   }
+  
+    
 
     render() {
         const { renterName, image, district, location, spaceFor, date, description, renter } = this.state.data;
@@ -29,7 +38,7 @@ class ParkingDetails extends Component {
                 <p>District: {district}</p>
                 <p>Space for: {spaceFor}</p>
                 <p>Description: {description}</p>
-                <p>Date Available: {date}</p>
+                <p>Date Available: {this.transformDate(date)}</p>
                 <Link to={`/message/${renter}`}>
                 <button className="generic-button">
                     Message {renterName}

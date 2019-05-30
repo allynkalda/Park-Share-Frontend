@@ -21,6 +21,12 @@ class UserService {
       .then(({ data }) => data)
       .catch(error => console.log(error))
   }
+
+  getuserdata() {
+    return this.userservice
+      .get('/api/myparking')
+      .then(({ data }) => data);
+  }
 }
 
 const userservice = new UserService();

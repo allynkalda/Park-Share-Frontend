@@ -33,7 +33,7 @@ export default class EditProfile extends Component {
         const { firstName, lastName, email, contact } = this.state;
         return (
             <div className="front-container">
-                <img src="./images/profile.png"></img>
+                <div className="big-margintop"></div>
                 <form onSubmit={this.handleFormSubmit}>
                   <label>First Name:</label>
                   <input

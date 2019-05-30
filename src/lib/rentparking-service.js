@@ -33,9 +33,22 @@ class RentPark {
       .then(({ data }) => data);
   }
 
+  editparking(info) {
+    const { location, district, spaceFor, date, description } = info;
+    return this.rentpark
+      .post('/api/myparkingedit', { location, district, spaceFor, date, description })
+      .then(({ data }) => data);
+  }
+
   getparking() {
     return this.rentpark
       .get('/api/findparking')
+      .then(({ data }) => data);
+  }
+
+  deleteparking() {
+    return this.rentpark
+      .delete('/api/myparkingdelete')
       .then(({ data }) => data);
   }
 
