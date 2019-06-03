@@ -14,7 +14,6 @@ class ParkingDetails extends Component {
         rentpark.getparkingdetails(id)
           .then( (data) =>{
             this.setState({data: data});
-            console.log(data)
           })
           .catch((err) => console.log(err));
       }
@@ -24,10 +23,8 @@ class ParkingDetails extends Component {
         const dateISO = new Date(date);
         const dateTransformed = dateISO.getDate() + '-' + (dateISO.getMonth()+1) + '-' + dateISO.getFullYear();
         return (dateTransformed)
-   }
+      }
   
-    
-
     render() {
         const { renterName, image, district, location, spaceFor, date, description, renter } = this.state.data;
         return (

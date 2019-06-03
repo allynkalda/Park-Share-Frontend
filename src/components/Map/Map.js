@@ -115,7 +115,6 @@ class CurrentLocation extends React.Component {
 
         rentpark.postparkmap({info})
           .then( (data)=> console.log(data))
-          console.log('this.props', this.props)
             this.props.history.push('/rentparking')      
     } 
 

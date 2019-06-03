@@ -10,7 +10,6 @@ export default class MessageRender extends Component {
     componentDidMount(){
         userservice.getuser()
         .then((data) => {
-            console.log('data set', data)
             this.setState({ user: data })
         })
     }

@@ -12,7 +12,6 @@ class Profile extends Component {
         //  fetch the data from API before initial render
         userservice.getuser()
             .then((data) => {
-                console.log('data set',data)
                 this.setState({ data: data })
             })
     }

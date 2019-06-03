@@ -24,7 +24,7 @@ class MyMessages extends Component {
         return (
             <div className="front-container">
                 <h3 className="message-space">My Messages</h3>
-                {
+        {
             listOfMessages.map( (list, index) => {
               return <MessageRender key={index} list={list}/>
           })
