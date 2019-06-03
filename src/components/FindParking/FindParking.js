@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import rentpark from "./../lib/rentparking-service";
+import rentpark from "../../lib/rentparking-service"
 import RenderFindPark from './RenderFindPark';
-import Search from './Search'
+import Search from "../../components/FindParking/Search"
 
 export default class FindParking extends Component {
     state = {

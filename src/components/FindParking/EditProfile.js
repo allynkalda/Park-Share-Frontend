@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import userservice from "./../lib/user-service";
+import userservice from "../../lib/user-service";
 import { Link } from "react-router-dom";
 
 export default class EditProfile extends Component {

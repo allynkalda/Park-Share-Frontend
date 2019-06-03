@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import rentpark from "./../lib/rentparking-service";
+import rentpark from "../../lib/rentparking-service";
 import MessageRender from './MessageRender';
 
 class MyMessages extends Component {

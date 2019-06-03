@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { withAuth } from "../lib/AuthProvider";
-import rentpark from "./../lib/rentparking-service";
+import { withAuth } from "../../lib/AuthProvider";
+import rentpark from "../../lib/rentparking-service";
 
 class RentParking extends Component {
   state = {

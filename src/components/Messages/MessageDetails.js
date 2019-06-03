@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import rentpark from "./../lib/rentparking-service";
+import rentpark from "../../lib/rentparking-service";
 import { Link } from "react-router-dom";
 
 export default class MessageDetails extends Component {

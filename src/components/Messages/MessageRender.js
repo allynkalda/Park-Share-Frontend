@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import userservice from "./../lib/user-service";
+import userservice from "../../lib/user-service";
 
 export default class MessageRender extends Component {
     state = {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { withAuth } from "../lib/AuthProvider";
+import { withAuth } from "../../lib/AuthProvider";
 import { Link } from "react-router-dom";
-import rentpark from "./../lib/rentparking-service";
+import rentpark from "../../lib/rentparking-service";
 
 class ParkingDetails extends Component {
     state = {

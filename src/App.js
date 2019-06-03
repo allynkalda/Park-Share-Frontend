@@ -1,32 +1,29 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import AuthProvider from "./lib/AuthProvider";
 
 // Main Pages
-import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Intro from "./pages/Intro";
-
-import PrivateRoute from "./components/PrivateRoute";
-import AnonRoute from "./components/AnonRoute";
-import AuthProvider from "./lib/AuthProvider";
+import PrivateRoute from "./pages/PrivateRoute";
+import AnonRoute from "./pages/AnonRoute";
+import Navbar from "./pages/Navbar";
 
 // Components
-import Navbar from "./components/Navbar";
-import FindParking from "./components/FindParking";
-import ParkingDetails from "./components/ParkingDetails";
-import RentParking from "./components/RentParking";
-import Directory from "./components/Directory";
-import RentSuccess from "./components/RentSuccess";
-import MessageForm from "./components/MessageForm";
-import MyMessages from "./components/MyMessages";
-import MessageDetails from "./components/MessageDetails";
-import EditProfile from "./components/EditProfile";
-import Profile from "./components/Profile";
-import MyParking from "./components/MyParking";
-import MyParkingEdit from "./components/MyParkingEdit";
-import MapContainer from "./MapContainer";
+import FindParking from "./components/FindParking/FindParking";
+import ParkingDetails from "./components/FindParking/ParkingDetails";
+import RentParking from "./components/RentParking/RentParking";
+import RentSuccess from "./components/RentParking/RentSuccess";
+import MessageForm from "./components/Messages/MessageForm";
+import MyMessages from "./components/Messages/MyMessages";
+import MessageDetails from "./components/Messages/MessageDetails";
+import EditProfile from "./components/FindParking/EditProfile";
+import Profile from "./components/MyProfile/Profile";
+import MyParking from "./components/MyProfile/MyParking";
+import MyParkingEdit from "./components/MyProfile/MyParkingEdit";
+import MapContainer from "./components/Map/MapContainer";
 
 class App extends Component {
   render() {
@@ -41,18 +38,17 @@ class App extends Component {
             <AnonRoute path="/login" component={Login} />
             <AnonRoute path="/logout" component={Logout} />
             <PrivateRoute path="/private" component={MapContainer} />
-            <Route path='/directory' component={Directory}/>
             <PrivateRoute path='/profile' component={Profile}/>
             <PrivateRoute path='/editprofile' component={EditProfile}/>
-            <Route exact path='/findparking' component={FindParking}/>
-            <Route path='/findparking/:id' component={ParkingDetails}/>
-            <Route exact path='/rentparking' component={RentParking}/>
-            <Route path='/rentparking/success' component={RentSuccess}/>
+            <PrivateRoute exact path='/findparking' component={FindParking}/>
+            <PrivateRoute path='/findparking/:id' component={ParkingDetails}/>
+            <PrivateRoute exact path='/rentparking' component={RentParking}/>
+            <PrivateRoute path='/rentparking/success' component={RentSuccess}/>
             <PrivateRoute exact path='/myparking' component={MyParking}/>
-            <Route exact path='/myparkingedit' component={MyParkingEdit}/>
-            <Route exact path='/message/:id' component={MessageForm}/>
-            <Route exact path='/mymessages' component={MyMessages}/>
-            <Route path='/mymessages/:id' component={MessageDetails}/>
+            <PrivateRoute exact path='/myparkingedit' component={MyParkingEdit}/>
+            <PrivateRoute exact path='/message/:id' component={MessageForm}/>
+            <PrivateRoute exact path='/mymessages' component={MyMessages}/>
+            <PrivateRoute path='/mymessages/:id' component={MessageDetails}/>
           </Switch>
         </div>
       </AuthProvider>

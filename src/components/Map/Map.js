@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import rentpark from "./lib/rentparking-service";
+import rentpark from '../../lib/rentparking-service';
 import { withRouter } from 'react-router';
 
 const mapStyles = {

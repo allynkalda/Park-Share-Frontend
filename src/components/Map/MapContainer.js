@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Map';
-import rentparkService from './lib/rentparking-service'
+import rentparkService from '../../lib/rentparking-service'
 import { Redirect } from "react-router-dom";
 
 export class MapContainer extends Component {

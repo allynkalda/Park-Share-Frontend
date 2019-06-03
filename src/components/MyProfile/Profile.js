@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import userservice from "./../lib/user-service";
-import { withAuth } from "../lib/AuthProvider";
+import userservice from "../../lib/user-service";
+import { withAuth } from "../../lib/AuthProvider";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {
