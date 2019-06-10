@@ -4,6 +4,8 @@
 
 The mobile app allows users to share their parking space to other users by posting details of their parking spots in the app. The interested users will then be able to see the posted spaces and the contact details of the renters of the space. They will be able to send messages to the owner of the parking spots.
 
+[parkshare.png](https://postimg.cc/tZB6Qvhg)
+
 ## User Stories
 
 - The users will see the logo of the service and they will be able to select from the sign up and login options.</br>
