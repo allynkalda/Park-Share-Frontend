@@ -6,18 +6,18 @@ The mobile app allows users to share their parking space to other users by posti
 
 ## User Stories
 
-The users will see the logo of the service and they will be able to select from the sign up and login options.</br>
-When they select the sign up option they will be allowed to sign up with their personal details and add a photo to their profile.</br>
-When the users select the log in option, they will be able to log in to the app using their login details.</br>
-They will see the Google Map showing their location and markers showing the parking spots available in the area.</br>
-The users will then be able to choose whether to look for parking or to rent a parking space.</br>
-When the users click on the option of looking for parking, he will be shown the list of parking spots available parking spots and where they are located.</br>
-They can then choose to get more information of a specific parking spot and contact the owner by messaging him in the app.</br>
-The users who choose to rent out their parking can fill in the form with the data on the parking spot they are intending to rent out.</br>
-They will be shown a success message if they have successfully posted their parking spot.</br>
-The navbar will show a log out button which will allow users to log out, a home button to go back to the rent out parking or rent a parking option, and an inbox button to see if there were any messages from other users.</br>
-The user gets an error 404 when the page does not exist. </br>
-The user gets an error 500 when there is an internal server error. </br>
+- The users will see the logo of the service and they will be able to select from the sign up and login options.</br>
+- When they select the sign up option they will be allowed to sign up with their personal details and add a photo to their profile.</br>
+- When the users select the log in option, they will be able to log in to the app using their login details.</br>
+- They will see the Google Map showing their location and markers showing the parking spots available in the area.</br>
+- The users will then be able to choose whether to look for parking or to rent a parking space.</br>
+- When the users click on the option of looking for parking, he will be shown the list of parking spots available parking spots and where they are located.</br>
+- They can then choose to get more information of a specific parking spot and contact the owner by messaging him in the app.</br>
+- The users who choose to rent out their parking can fill in the form with the data on the parking spot they are intending to rent out.</br>
+- They will be shown a success message if they have successfully posted their parking spot.</br>
+- The navbar will show a log out button which will allow users to log out, a home button to go back to the rent out parking or rent a parking option, and an inbox button to see if there were any messages from other users.</br>
+- The user gets an error 404 when the page does not exist. </br>
+- The user gets an error 500 when there is an internal server error. </br>
 
 ## Backlog
 
