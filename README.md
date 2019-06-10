@@ -1,120 +1,135 @@
-# Project Name
+# ParkShare
 
 ## Description
 
-Describe your project in one/two lines.
+The mobile app allows users to share their parking space to other users by posting details of their parking spots in the app. The interested users will then be able to see the posted spaces and the contact details of the renters of the space. They will be able to send messages to the owner of the parking spots.
 
 ## User Stories
 
--  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
--  **Signup:** As an anon I can sign up in the platform so that I can start saving favorite restaurants
--  **Login:** As a user I can login to the platform so that I can see my favorite restaurants
--  **Logout:** As a user I can logout from the platform so no one else can use it
--  **Add Restaurants** As a user I can add a restaurant so that I can share it with the community
--  **List Restaurants** As a user I want to see the restaurants so that I can choose one to eat
--  **Search Restaurants** As a user I want to search restaurants by name so that I know if it´s already in the platform
--  **Add to favorites** As a user I want to add a restaurant to favorite so that I can save the restaurants that I liked the most
--  **See my favorites** As a user I want to see my favorite restaurantes so that I can see the ones I liked the most
+The users will see the logo of the service and they will be able to select from the sign up and login options.</br>
+When they select the sign up option they will be allowed to sign up with their personal details and add a photo to their profile.</br>
+When the users select the log in option, they will be able to log in to the app using their login details.</br>
+They will see the Google Map showing their location and markers showing the parking spots available in the area.</br>
+The users will then be able to choose whether to look for parking or to rent a parking space.</br>
+When the users click on the option of looking for parking, he will be shown the list of parking spots available parking spots and where they are located.</br>
+They can then choose to get more information of a specific parking spot and contact the owner by messaging him in the app.</br>
+The users who choose to rent out their parking can fill in the form with the data on the parking spot they are intending to rent out.</br>
+They will be shown a success message if they have successfully posted their parking spot.</br>
+The navbar will show a log out button which will allow users to log out, a home button to go back to the rent out parking or rent a parking option, and an inbox button to see if there were any messages from other users.</br>
+The user gets an error 404 when the page does not exist. </br>
+The user gets an error 500 when there is an internal server error. </br>
 
 ## Backlog
 
-User profile:
-- see my profile
-- upload my profile picture
-- see other users profile
-- list of events created by the user
-- list events the user is attending
+Calendar API: This will allow users to see the date and time when the parking spot will be available</br>
+Sockets.io: This will allow users to have a chat functionality to message other users.
 
-Geo Location:
-- add geolocation to events when creating
-- show event in a map in event detail page
-- show all events in a map in the event list page
+## Data Structure
+**User** { 
 
-Homepage:
-- ...
-  
-# Client
+​	First Name: String,
 
-## Pages
+​	Last Name: String,
 
-| url | public | Functionality |
-|-----|-------|---------------|
-| `/` | true | landing page |
-| `/signup` | true | Signup user |
-| `/login` | true | login user |
-| `/profile` | false | profile of user |
+​	Email: String,
 
-## Services
+​	Username: String,
 
-- Auth Service
-  - auth.login(user)
-  - auth.signup(user)
-  - auth.logout()
-  - auth.me()
-  - auth.getUser() // synchronous
-- Restaurant Service
-  - restaurant.list()
-  - restaurant.search(terms)
-  - restaurant.create(data)
-  - restaurant.detail(id)
-  - restaurant.addFavorite(id)
-  - restaurant.removeFavorite(id)   
+​	Password: String,
 
-# Server
+​	Image: String,
 
-## Models
+​	Id: user_id
 
-User model
+}
 
-```
-username - String // required
-email - String // required & unique
-password - String // required
-favorites - [ObjectID<Restaurant>]
-```
+**Parking** {
 
-Restaurant model
+​	Renter: user_id,
 
-```
-owner - ObjectID<User> // required
-name - String // required
-phone - String
-address - String
-```
+​	Location: Object,
 
-## API Endpoints (backend routes)
+​	District: String,
 
-## API routes:
+​	Image: String,
 
-### auth
-|Method|Route|Functionality|
-|---|---|---|
-|GET|api/auth/me|Check session status|
-|POST|api/auth/signup|Log in user to app and set user to session (Body: username, password)|
-|POST|api/auth/login|Register user to app and set user to session (Body: username, password)|
-|POST|api/auth/logout|Log out user from app and remove session|
-  
+​	Space: enum[car, van, motorbike]
 
-## Links
+​	Description: String,
 
-### Trello/Kanban
+​	UsersInterested: [user_id],
 
-[Link to your trello board](https://trello.com) or picture of your physical board
+​	Date: Date
 
-### Git
+}
 
-The url to your repository and to your deployed project
+**Message** {
 
-[Client repository Link](https://github.com/Ironhack-PartTime-BCN/boilerplate-frontend-module-3)
+​	User: user_id,
 
-[Server repository Link](https://github.com/Ironhack-PartTime-BCN/boilerplate-backend-module-3)
+​	Renter: user_id,
 
-[Deploy Link Backend](http://heroku.com)
+​	Message: String,
 
-[Deploy Link Frontend]()
+​	Date: Date
 
-### Slides
+}
 
-The url to your presentation slides
+<h2>Routes</h2>
 
-[Slides Link](http://slides.com)
+**Back-end Routes**
+
+| HTTP Method | Route              | Description                                                  |
+| ----------- | ------------------ | ------------------------------------------------------------ |
+| ****GET****     | `/`                | Main page route. Login and sign up option.                   |
+| ****GET****     | `/login`           | Login route. Renders login form view.                        |
+| ****POST****    | `/login`           | Login route. Sends login form data to the server.            |
+| ****GET****     | `/signup`          | Signup route. Renders signup form view.                      |
+| ****POST****    | `/signup`          | Signup route. Sends signup info to server and creates user in the DB. |
+| ****GET****     | `/profile/:userId` | Renders profile view.                                        |
+| ****GET****     | `/directory`       | Find parking or Rent out parking options.                |
+| ****GET****     | `/findparking`          | Renders Google Map markers of available parking spots.                                    |
+| ****GET****    | `/findparkingall`          | Shows parking spots in a grid.                                 |
+| ****GET****    | `/findparking/:id`       | Show specific parking detail.                                 |
+| ****GET****    | `/findparking/:id/success`       | Shows success in getting the parking owner's details.                                 |
+| ****GET****     | `/rentparking`  | Renders a form that the user who wants to rent has to fill in.                               |
+| ****POST****     | `/rentparking`         | Sends the data on the parking the user wants to rent and saves it in the database.             |
+| ****GET****     | `/success` | Renders successfully saved details of the parking spot.    </br>                          |
+
+**Front-end Routes**
+
+<Route exact path='/' component={Main} /></br>   
+
+<Route path='/login' component={Login} /></br>   
+
+<Route path='/signup' component={Signup} /></br>   
+
+<Route path='/directory' component={Directory}/></br>   
+
+<Route path='/findparking' component={ParkingList} /></br>   
+
+<Route path='/findparking/:id' component={ParkingDetails} /></br>   
+
+<Route path='/rentparking' component={ParkingForm} /></br>   
+
+<h2>Technologies</h2>
+
+
+
+****Back-end:**** Node, Express, Mongoose, Passport.js, zxcvbn, bcrypt
+
+****Front-end:**** React, Axios, Cloudinary
+
+
+
+<h2>Links</h2>
+
+
+
+Github: 
+
+Kanban: 
+
+Slides:
+
+Webpage: 
