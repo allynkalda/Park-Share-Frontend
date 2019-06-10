@@ -27,6 +27,7 @@ Calendar API: This will allow users to see the date and time when the parking sp
 Sockets.io: This will allow users to have a chat functionality to message other users.
 
 ## Data Structure
+```
 **User** { 
 
 ​	First Name: String,
@@ -44,6 +45,8 @@ Sockets.io: This will allow users to have a chat functionality to message other 
 ​	Id: user_id
 
 }
+```
+```
 
 **Parking** {
 
@@ -64,6 +67,8 @@ Sockets.io: This will allow users to have a chat functionality to message other 
 ​	Date: Date
 
 }
+```
+```
 
 **Message** {
 
@@ -76,8 +81,8 @@ Sockets.io: This will allow users to have a chat functionality to message other 
 ​	Date: Date
 
 }
-
-<h2>Routes</h2>
+```
+## Routes
 
 **Back-end Routes**
 
