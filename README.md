@@ -99,37 +99,21 @@ Sockets.io: This will allow users to have a chat functionality to message other 
 **Front-end Routes**
 
 <Route exact path='/' component={Main} /></br>   
-
 <Route path='/login' component={Login} /></br>   
-
 <Route path='/signup' component={Signup} /></br>   
-
 <Route path='/directory' component={Directory}/></br>   
-
 <Route path='/findparking' component={ParkingList} /></br>   
-
 <Route path='/findparking/:id' component={ParkingDetails} /></br>   
-
 <Route path='/rentparking' component={ParkingForm} /></br>   
 
-<h2>Technologies</h2>
-
-
+## Technologies
 
 ****Back-end:**** Node, Express, Mongoose, Passport.js, zxcvbn, bcrypt
-
 ****Front-end:**** React, Axios, Cloudinary
 
+## Links
 
-
-<h2>Links</h2>
-
-
-
-Github: 
-
-Kanban: 
-
+Backend: 
+Trello: 
 Slides:
-
-Webpage: 
+Deployed version: 
