@@ -4,7 +4,7 @@
 
 The mobile app allows users to share their parking space to other users by posting details of their parking spots in the app. The interested users will then be able to see the posted spaces and the contact details of the renters of the space. They will be able to send messages to the owner of the parking spots.
 
-![parkshare.png](https://postimg.cc/tZB6Qvhg)
+![image-park-sahre](https://postimg.cc/tZB6Qvhg)
 
 ## User Stories
 
@@ -139,7 +139,7 @@ npm run dev
 
 ## Links
 
-Backend: https://github.com/allynkalda/Park-Share-Backend
-Trello: https://trello.com/b/PVF9NL0F/park-share-app-project
-Slides: <a href="https://drive.google.com/open?id=1sWxuFSNB_YxhaRW1ekSc9qbvpFBxCCOs0QhjMow-Et0">Google Presentation</a>
-Deployed version: https://recipease-ironhack.herokuapp.com/
+Backend: https://github.com/allynkalda/Park-Share-Backend</br>
+Trello: https://trello.com/b/PVF9NL0F/park-share-app-project</br>
+Slides: <a href="https://drive.google.com/open?id=1sWxuFSNB_YxhaRW1ekSc9qbvpFBxCCOs0QhjMow-Et0">Google Presentation</a></br>
+Deployed version: https://recipease-ironhack.herokuapp.com/</br>
