@@ -105,10 +105,10 @@ Sockets.io: This will allow users to have a chat functionality to message other 
 
 **Front-end Routes**
 
-Route exact path='/' component={Main} </br> 
+Route exact path='/' component={Main}</br> 
 Route path='/login' component={Login}</br> 
-Route path='/signup' component={Signup} </br>   
-Route path='/directory' component={Directory} </br> 
+Route path='/signup' component={Signup}</br>   
+Route path='/directory' component={Directory}</br> 
 Route path='/findparking' component={ParkingList}</br> 
 Route path='/findparking/:id' component={ParkingDetails}</br>  
 Route path='/rentparking' component={ParkingForm}</br>   
