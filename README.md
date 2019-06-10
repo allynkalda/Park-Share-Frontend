@@ -108,12 +108,36 @@ Route path='/rentparking' component={ParkingForm}</br>
 
 ## Technologies
 
-****Back-end:**** Node, Express, Mongoose, Passport.js, zxcvbn, bcrypt
+****Back-end:**** Node, Express, Mongoose, Passport.js, zxcvbn, bcrypt</br>
 ****Front-end:**** React, Axios, Cloudinary
+
+## Getting Started
+
+**Prerequisites**
+- Node
+- Npm
+
+**Installing**
+
+Clone both the ParkShare front-end and the ParkShare back-end</br>
+
+In the command line, for both repos, enter:
+```
+npm install
+```
+**To start**
+On the frontend:
+```
+npm start
+```
+On the frontend:
+```
+npm run dev
+```
 
 ## Links
 
-Backend: 
-Trello: 
-Slides:
-Deployed version: 
+Backend: https://github.com/allynkalda/Park-Share-Backend
+Trello: https://trello.com/b/PVF9NL0F/park-share-app-project
+Slides: <a href="https://drive.google.com/open?id=1sWxuFSNB_YxhaRW1ekSc9qbvpFBxCCOs0QhjMow-Et0">Google Presentation</a>
+Deployed version: https://recipease-ironhack.herokuapp.com/
